@@ -1,1 +1,1 @@
-# calculator
+calculator project to do basic maths operations with html,css and javascript. 
