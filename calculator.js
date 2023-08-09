@@ -4,7 +4,7 @@ const substract = (a, b)=> {return a - b};
 const multiply = (a, b)=> {return a * b};
 function divide(a, b){
     if(b == 0){
-        return"opps can't divide number with zero"
+        return alert("opps can't divide number with zero")
     }
     else{
         return a / b
@@ -14,13 +14,17 @@ function divide(a, b){
 };
     
 //functions to use percent
-const percent = (number)=> {return number / 100}   
+const percent = (number)=> {return number / 100};
+
+//function for to make number negative
+const toNegative = (number)=>{return (-number)};
+console.log(toNegative(3))
 
 //create 3 variables to calculate
 let firstNum="";
 let secondNum ="";
 let currentOperator ="";
-let results;
+
 
 
 //function that take 2 numbers and operator then call one of the above functions
@@ -52,6 +56,7 @@ const equal =document.getElementById("equals");
 const clearAll = document.getElementById("clear");
 const backSpace = document.getElementById("delete");
 const percents = document.getElementById("percent"); 
+const changeNumber = document.getElementById("negative");
 
 //add eventListeners to the buttons to get user input
 numbers.forEach(number=>{
@@ -113,7 +118,7 @@ operators.forEach(oprator=>{
 
 equal.addEventListener('click',() => {
 //return if number or operator not entered
-        if(firstNum == "" || secondNum == "" || customElements == ""){
+        if(firstNum == "" || secondNum == "" || currentOperator == ""){
             return displayCurrent.textContent = "Please,make  sure to enter two numbers and operator"
         }
         else{
@@ -162,4 +167,17 @@ percents.addEventListener('click',() => {
     }
 });
 
-
+changeNumber.addEventListener('click',()=>{
+     if(displayCurrent.textContent == "0"){
+        return
+     }  
+    else if(secondNum == ""){
+      firstNum =  toNegative(firstNum);
+      populate(firstNum,displayCurrent);
+    }
+    else if(secondNum !== "")
+    {
+        secondNum = toNegative(secondNum);
+        populate(secondNum,displayCurrent);
+    }
+});
