@@ -2,8 +2,17 @@
 const sum = (a, b)=> {return a + b};
 const substract = (a, b)=> {return a - b};
 const multiply = (a, b)=> {return a * b};
-const divide = (a,b )=> {return a / b};
+function divide(a, b){
+    if(b == 0){
+        return"opps can't divide number with zero"
+    }
+    else{
+        return a / b
+    };
 
+
+};
+    
 //functions to use percent
 const percent = (number)=> {return number / 100}   
 
@@ -47,8 +56,12 @@ const percents = document.getElementById("percent");
 //add eventListeners to the buttons to get user input
 numbers.forEach(number=>{
     number.addEventListener('click',()=>{
-       
-        if(currentOperator !== ""){
+      //disable decimal if there is one
+        if(number.textContent == "." && displayCurrent.textContent.includes(".")){
+            return
+        }
+        
+        else if(currentOperator !== ""){
         //if the user chain oprators the current operator added on displayNext  with the first number for clarity
             
             secondNum += number.textContent;
