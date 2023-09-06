@@ -36,8 +36,6 @@ html{
     grid-template-columns: repeat(4,1fr);
 }
 
-
-
 button{
     font-family: 'Franklin Gothic Medium', sans-serif;
     font-size: large;
@@ -47,6 +45,7 @@ button{
     color: black;
     background-color: whitesmoke;
 }
+
 button:hover{
     border:solid rgb(13, 6, 207) 2px ;
     background-color: rgb(1, 1, 1);
@@ -60,9 +59,10 @@ color: whitesmoke;
 
 [data-operator]:hover{
     background-color: rgba(255, 255, 0, 0.644);
-    color:black
+    color:black;
 }
 
+    
 #display-next, #display-current{
    display: block;
    font-family: 'Franklin Gothic Medium', sans-serif;
